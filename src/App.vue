@@ -1,21 +1,16 @@
 <script setup>
-import { ref } from "vue";
-import PlanPicker from "./components/PlanPicker.vue";
-
-const show = ref(true);
+import FancyButton from "./components/FancyButton.vue";
 </script>
 
 <template>
   <div class="content">
-    <h1 class="title">Coffee Plans</h1>
-
-    <h2 class="subtitle">
-      We travel the world to source the very best single origin coffee for you
-    </h2>
-
-    <label><input type="checkbox" v-model="show" />Show plan picker</label>
-
-    <PlanPicker v-if="show" />
+    <!-- <FancyButton> <strong>S</strong>ubmit </FancyButton> -->
+    <!-- <FancyButton></FancyButton> -->
+    <FancyButton>
+      <!-- <template v-slot:icon>😂</template> -->
+      <template #icon="{ hover }">{{ hover ? "😂" : "😒" }} </template>
+      <template v-slot:default> Submit </template>
+    </FancyButton>
   </div>
 </template>
 
